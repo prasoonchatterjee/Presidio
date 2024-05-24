@@ -11,6 +11,7 @@ const LogIn = () => {
       password
     })
     const authToken = response.data.token;
+    const userId = response.data._id;
     localStorage.setItem("authToken", authToken);
   }
   return (

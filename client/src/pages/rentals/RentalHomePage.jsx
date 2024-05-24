@@ -23,7 +23,7 @@ const RentalHomePage = () => {
     ))
   }
   return (
-    <div className="h-screen flex justify-between">
+    <div className="h-screen flex justify-around flex-wrap">
     {renderAllRentals()}
     </div>
   )
