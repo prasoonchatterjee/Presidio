@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const user = require('./user');
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
+const rentalSchema = new Schema({
   area:{
     type:String,
     required:true,
@@ -27,4 +27,4 @@ const userSchema = new Schema({
 },{timestamps:true})
 
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('Rental', rentalSchema);

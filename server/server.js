@@ -2,6 +2,7 @@ const express = require('express');
 const authRoutes = require('./routes/auth')
 const mongoose = require('mongoose');
 const cors = require('cors');
+const rentalRoutes = require('./routes/rental');
 
 const app = express();
 app.use(express.json());
@@ -11,6 +12,7 @@ app.get("/",(req,res)=>{
   res.send({message:"homepage request"})
 })
 app.use('/api/auth',authRoutes);
+app.use('/api/rental', rentalRoutes);
 
 mongoose
   .connect(`mongodb+srv://chatterjeeprasoon:Kby99FM5glLlbYvw@clusterpresidio.82sgog4.mongodb.net/?retryWrites=true&w=majority&appName=clusterPresidio`)
