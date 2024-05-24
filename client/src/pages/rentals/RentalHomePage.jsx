@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect,useState } from "react";
+import { Link } from "react-router-dom";
 
 const RentalHomePage = () => {
   const [allRentals,setAllRentals] = useState([]);
@@ -14,12 +15,12 @@ const RentalHomePage = () => {
 
   const renderAllRentals = () => {
     return allRentals.map((rental)=>(
-      <div key={rental._id} className="border border-black h-fit p-2 m-2">
+      <Link to={`rental/${rental._id}`} key={rental._id} className="border border-black h-fit p-2 m-2">
         <p>Area:{rental.area}</p>
         <p>No. Of Bed Rooms: {rental.noOfBedRooms}</p>
         <p>No. Of Bath Rooms: {rental.noOfBathRooms}</p>
         <p>Landmarks Nearby: {rental.landMarks}</p>
-      </div>
+      </Link>
     ))
   }
   return (
